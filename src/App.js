@@ -3,6 +3,8 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 
 function App() {
@@ -31,7 +33,30 @@ function App() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-    
+
+    <div className="main-bg"></div>
+
+    <Container>
+      <Row>
+        <Col>
+          <img src={process.env.PUBLIC_URL+'/shoes3.jpeg'} width="80%" />
+          <h4>상품명</h4>
+          <p>상품설명</p>
+        </Col>
+        <Col>
+          <img src="https://codingapple1.github.io/shop/shoes2.jpg" width="80%" />
+          <h4>상품명</h4>
+          <p>상품설명</p>
+        </Col>
+        <Col>
+          <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="80%" />
+          <h4>상품명</h4>
+          <p>상품설명</p>
+        </Col>
+        
+      </Row>
+    </Container>
+
     </div>
   );
 }
