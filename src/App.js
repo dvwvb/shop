@@ -1,13 +1,15 @@
 import './App.css';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import {Container, Nav, Navbar, NavDropdown, Row} from 'react-bootstrap';
+import { useState } from 'react';
+import data from './data';
+import Card from './Card';
 
 
 function App() {
+
+  let [shoes] = useState(data) //데이터를 불러와서 shoes라는 state에 넣어줌
+  // console.log(shoes[0])
+
   return (
     <div className="App">
       <Navbar expand="lg" className="bg-body-tertiary">
@@ -38,27 +40,26 @@ function App() {
 
     <Container>
       <Row>
-        <Col>
-          <img src={process.env.PUBLIC_URL+'/shoes3.jpeg'} width="80%" />
-          <h4>상품명</h4>
-          <p>상품설명</p>
-        </Col>
-        <Col>
-          <img src="https://codingapple1.github.io/shop/shoes2.jpg" width="80%" />
-          <h4>상품명</h4>
-          <p>상품설명</p>
-        </Col>
-        <Col>
-          <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="80%" />
-          <h4>상품명</h4>
-          <p>상품설명</p>
-        </Col>
-        
+          {/* <Card shoes={shoes[0]} i={1}></Card>  */}
+          {/* <Card shoes={shoes[1]} i={2}></Card> */}
+          {/* <Card shoes={shoes[2]} i={3}></Card> */}
+
+          {/*props 전송, shoes와 i 2개의 props 전송*/}
+
+          {
+            shoes.map((a, i)=>{
+              return(
+                <Card shoes={shoes[i]} i={i+1}></Card>
+              )
+            })
+          }
       </Row>
     </Container>
 
     </div>
   );
 }
+
+
 
 export default App;
