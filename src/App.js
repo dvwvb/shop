@@ -54,9 +54,9 @@ function App() {
         element={
         <Main shoes={shoes}></Main>
         }>
-
         </Route>
-        <Route path="/detail" element={<Detail />}></Route>
+        <Route path="/detail/:id" element={<Detail shoes={shoes} />}></Route>
+        {/* url중 id를 useprams로 가져가기 위해 :id로 표기 */}
         <Route path="/about" element={<div>about</div>}></Route>
         <Route path="*" element={<div>404페이지</div>}></Route>
         {/* 없는 페이지로 접속시 404페이지 노출 */}
