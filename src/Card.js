@@ -1,6 +1,7 @@
 import React from 'react';
 import {Col} from 'react-bootstrap';
 import {Routes, Route, Link, useNavigate, Outlet} from 'react-router-dom'
+// 또 수정
 
 function Card(props){
     return(
